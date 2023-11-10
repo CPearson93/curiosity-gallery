@@ -16,21 +16,3 @@ Responsiblities [
 		git : 'https://github.com/abmatthis/curiosity-gallery'
 		}
 	]
-Responsiblities 
-
-Christopher_M _Pearson {
-	frontend : 'react'
-	Styling : 'bootstrap'
-	}
-
-Daniel_Tatu {
-	search_feature : ''
-	upload_feature : ''
-	backend : 'express.js'
-	}
-
-Adrian_Matthis {
-	backend : 'express.js'
-	database : 'mongoDB'
-	git : 'https://github.com/abmatthis/curiosity-gallery'
-	}
