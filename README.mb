@@ -1,0 +1,36 @@
+This a group project done by Christopher_M _Pearson, Daniel_Tatu and Adrian_Matthis. Curiosity Gallery is an online art gallery create with mongoDB, express.js, react and node.js(MERN). You are able to post your art complete with upload feature and details about the piece. Others are able to view all pieces that are uploaded by others. You are also able to search for specific pieces
+
+Responsiblities [
+	Christopher_M _Pearson {
+		frontend : 'react'
+		Styling : 'bootstrap'
+		}	
+	Daniel_Tatu {
+		search_feature : ''
+		upload_feature : ''
+		backend : 'express.js'
+		}
+	Adrian_Matthis {
+		backend : 'express.js'
+		database : 'mongoDB'
+		git : 'https://github.com/abmatthis/curiosity-gallery'
+		}
+	]
+Responsiblities 
+
+Christopher_M _Pearson {
+	frontend : 'react'
+	Styling : 'bootstrap'
+	}
+
+Daniel_Tatu {
+	search_feature : ''
+	upload_feature : ''
+	backend : 'express.js'
+	}
+
+Adrian_Matthis {
+	backend : 'express.js'
+	database : 'mongoDB'
+	git : 'https://github.com/abmatthis/curiosity-gallery'
+	}
