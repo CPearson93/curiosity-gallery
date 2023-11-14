@@ -21,6 +21,7 @@ const Create = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        console.log(art);
         axios.post("http://localhost:8000/api/art", art)
         .then(res => {
             console.log(res)
