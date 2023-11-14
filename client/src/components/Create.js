@@ -5,7 +5,7 @@ import axios from 'axios';
 const Create = () => {
     const navigate = useNavigate();
     const [art, setArt] = useState({
-        name: '',
+        title: '',
         artist: '',
         height: '',
         width: '',
@@ -27,8 +27,8 @@ const Create = () => {
             navigate("/")
         })
         .catch(err => {
-            console.log(err.response.data.error.errors)
-            setError(err.response.data.error.errors)
+            console.log(err.response.data.error)
+            setError(err.response.data.error)
         })
     }
 
@@ -51,17 +51,45 @@ const Create = () => {
         <p>Create Page</p>
                     <form className="form-background" onSubmit={handleSubmit}>
                 <div className="form-title">
-                    <label className="form-label">Art Name</label>
-                    <input className="form-input" name="name" type="text" onChange = {handleChange}/> 
+                    <label className="form-label">Art Title</label>
+                    <input className="form-input" name="title" type="text" onChange = {handleChange}/> 
                     {
-                        error.name ? <p className="error-msg">{error.name.message}</p> : null
+                        error.title ? <p className="error-msg">{error.title.message}</p> : null
                     }
                 </div>
                 <div className="form-body">
                     <label className="form-label">Artist</label>
-                    <textarea className="form-textarea" cols="20" rows="3" name="artist" type="text" onChange = {handleChange}/> 
+                    <input className="form-input" name="artist" type="text" onChange = {handleChange}/> 
                     {
                         error.artist ? <p className="error-msg">{error.artist.message}</p> : null
+                    }
+                </div>
+                <div className="form-body">
+                    <label className="form-label">Height</label>
+                    <input className="form-input" name="height" type="number" onChange = {handleChange}/> 
+                    {
+                        error.height ? <p className="error-msg">{error.height.message}</p> : null
+                    }
+                </div>
+                <div className="form-body">
+                    <label className="form-label">Width</label>
+                    <input className="form-input" name="width" type="number" onChange = {handleChange}/> 
+                    {
+                        error.width ? <p className="error-msg">{error.width.message}</p> : null
+                    }
+                </div>
+                <div className="form-body">
+                    <label className="form-label">Description</label>
+                    <textarea className="form-textarea" cols="20" rows="3" name="description" type="text" onChange = {handleChange}/> 
+                    {
+                        error.description ? <p className="error-msg">{error.description.message}</p> : null
+                    }
+                </div>
+                <div className="form-body">
+                    <label className="form-label">Type</label>
+                    <input className="form-input" name="type" type="text" onChange = {handleChange}/> 
+                    {
+                        error.type ? <p className="error-msg">{error.type.message}</p> : null
                     }
                 </div>
                 <br/>

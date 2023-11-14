@@ -47,20 +47,20 @@ return(
                 </div>
             </div>
             {
-                allArt.map((arts) => (
-                    <div className="art-list" key={arts._id}>
-                        <div className="art-content">
-                            <h2>{arts.name}</h2>
-                            <p>{arts.artist}</p>
-                            <p>{arts.type}</p>
-                        </div>
-                        <div className="art-edit">
-                            <button onClick={() => handleEdit(arts._id)}>
-                                Edit
-                            </button>
-                        </div>
-                    </div>
-                ))
+                // allArt.map((arts) => (
+                //     <div className="art-list" key={arts._id}>
+                //         <div className="art-content">
+                //             <h2>{arts.name}</h2>
+                //             <p>{arts.artist}</p>
+                //             <p>{arts.type}</p>
+                //         </div>
+                //         <div className="art-edit">
+                //             <button onClick={() => handleEdit(arts._id)}>
+                //                 Edit
+                //             </button>
+                //         </div>
+                //     </div>
+                // ))
             }
     </div>
     )
