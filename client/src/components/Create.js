@@ -28,8 +28,8 @@ const Create = () => {
             navigate("/")
         })
         .catch(err => {
-            console.log(err.response.data.error)
-            setError(err.response.data.error)
+            console.log(err.response.data.errors)
+            setError(err.response.data.errors)
         })
     }
 
@@ -37,7 +37,7 @@ const Create = () => {
         navigate('/')
     }
 
-    
+
     return(
     <div>
         <div className="nav-wall">
