@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
 const ArtSchema = new mongoose.Schema({
-    name: {
+    title: {
         type: String,
-        required: [true, 'A name for the piece is required'],
+        required: [true, 'A title for the piece is required'],
         minLength: [2, "Name must be atleast 2 characters"]
     },
 
