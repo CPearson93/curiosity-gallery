@@ -56,13 +56,22 @@ const Update = () => {
 
     
     return(
-        <div>
+    <div>
+        <div className="nav-wall">
+            <div className="nav-content">
+                <h1>Curiosity Gallery</h1>
+                <h2>Share a piece of art, Enjoy a piece of art</h2>
+                <button onClick={() => handleHome()}>
+                    Go back Home
+                </button>
+            </div>
+        </div>
         <p>Create Page</p>
         <button onClick={() => handleHome()}>
-                        Go back Home
-                    </button>
+            Go back Home
+        </button>
     </div>
-)
+    )
 }
 
 export default Update

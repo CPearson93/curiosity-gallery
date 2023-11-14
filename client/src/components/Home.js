@@ -31,7 +31,10 @@ const Home = () => {
 
 return(
     <div>
-        <p>Home Page</p>
+                <div className="nav-wall">
+                <div className="nav-content">
+                    <h1>Curiosity Gallery</h1>
+                    <h2>Share a piece of art, Enjoy a piece of art</h2>
         <button onClick={() => handleCreate()}>
                     Add Art!
                 </button>
@@ -41,7 +44,25 @@ return(
         <button onClick={() => handleDetail()}>
                     Art Details
                 </button>
+                </div>
+            </div>
+            {
+                allArt.map((arts) => (
+                    <div className="art-list" key={arts._id}>
+                        <div className="art-content">
+                            <h2>{arts.name}</h2>
+                            <p>{arts.artist}</p>
+                            <p>{arts.type}</p>
+                        </div>
+                        <div className="art-edit">
+                            <button onClick={() => handleEdit(arts._id)}>
+                                Edit
+                            </button>
+                        </div>
+                    </div>
+                ))
+            }
     </div>
-)
+    )
 }
 export default Home
