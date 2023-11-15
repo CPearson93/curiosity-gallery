@@ -37,6 +37,10 @@ const Update = () => {
             console.log(res)
             navigate("/")
         })
+        .catch(err => {
+            console.log(err.response.data.errors)
+            setError(err.response.data.errors)
+        })
     }
 
     const handleDelete = () => {
