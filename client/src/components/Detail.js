@@ -47,7 +47,7 @@ const Detail = () => {
         <p>Create Page</p>
         <h2>{oneArt.title}</h2>
         <p>{oneArt.artist}</p>
-        <p>{oneArt.height}", {oneArt.width}"</p>
+        <p>{oneArt.height}" x {oneArt.width}"</p>
         <p>{oneArt.type}</p>
         <p>{oneArt.description}</p>
         <button onClick={() => handleDelete(oneArt._id)}>
