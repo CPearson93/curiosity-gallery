@@ -1,12 +1,25 @@
-import React, {useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
+import {useNavigate, useParams} from 'react-router-dom';
 import axios from 'axios';
 
 const Detail = () => {
     const navigate = useNavigate();
+    const { id } = useParams();
+    const [oneArt, setOneArt] = useState([]);
+
+    useEffect(() => {
+        axios.get(`http://localhost:8000/api/art/` + id)
+        .then(res => {
+            console.log(res)
+            setOneArt(res.data)
+        })
+        .catch(err => {
+            console.log(err)
+        })
+    }, [])
 
     const handleDelete = () => {
-        axios.delete('http://localhost:8000/api/art/${id}')
+        axios.delete(`http://localhost:8000/api/art/` + id)
         .then(res => {
             console.log(res)
         })
@@ -32,8 +45,13 @@ const Detail = () => {
             </div>
         </div>
         <p>Create Page</p>
-        <button onClick={() => handleHome()}>
-            Go back Home
+        <h2>{oneArt.title}</h2>
+        <p>{oneArt.artist}</p>
+        <p>{oneArt.height}", {oneArt.width}"</p>
+        <p>{oneArt.type}</p>
+        <p>{oneArt.description}</p>
+        <button onClick={() => handleDelete(oneArt._id)}>
+            Delete
         </button>
     </div>
     )
