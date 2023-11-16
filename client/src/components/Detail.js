@@ -53,18 +53,21 @@ const Detail = () => {
             </div>
         </div>
         <div className="page-body">
-        <p>Create Page</p>
-        <h2>{oneArt.title}</h2>
-        <p>{oneArt.artist}</p>
-        <p>{oneArt.height}" x {oneArt.width}"</p>
-        <p>{oneArt.type}</p>
-        <p>{oneArt.description}</p>
-        <button onClick={() => handleEdit(oneArt._id)}>
-            Edit
-        </button>
-        <button onClick={() => handleDelete(oneArt._id)}>
-            Delete
-        </button>
+            <div className="form-background">
+                <h2>{oneArt.title}</h2>
+                <p>{oneArt.artist}</p>
+                <p>{oneArt.height}" x {oneArt.width}"</p>
+                <p>{oneArt.type}</p>
+                <p>{oneArt.description}</p>
+                <div className="form-buttons">
+                    <button onClick={() => handleEdit(oneArt._id)}>
+                        Edit
+                    </button>
+                    <button onClick={() => handleDelete(oneArt._id)}>
+                        Delete
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
     )
