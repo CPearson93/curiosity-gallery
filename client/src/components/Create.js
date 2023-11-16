@@ -39,32 +39,37 @@ const Create = () => {
 
 
     return(
-    <div>
+    <div className="wrapper">
         <div className="nav-wall">
             <div className="nav-content">
-                <h1>Curiosity Gallery</h1>
-                <h2>Share a piece of art, Enjoy a piece of art</h2>
+                <h1 className="head-color">Curiosity Gallery</h1>
+                <div className="nav-button">
                 <button onClick={() => handleHome()}>
-                    Go back Home
+                    Home
                 </button>
+                </div>
+            </div>
+            <div className="nav-desc">
+                <h2 className="head-color">Share a piece of art, Enjoy a piece of art</h2>
             </div>
         </div>
-        <p>Create Page</p>
-                    <form className="form-background" onSubmit={handleSubmit}>
-                <div className="form-title">
-                    <label className="form-label">Art Title</label>
-                    <input className="form-input" name="title" type="text" onChange = {handleChange}/> 
+        <div className="page-body">
+            <h2 className="page-title">Create Page</h2>
+                <form className="form-background" onSubmit={handleSubmit}>
+                    <div className="form-body">
+                        <label className="form-label">Art Title</label>
+                        <input className="form-input" name="title" type="text" onChange = {handleChange}/> 
                     {
                         error.title ? <p className="error-msg">{error.title.message}</p> : null
                     }
-                </div>
-                <div className="form-body">
-                    <label className="form-label">Artist</label>
-                    <input className="form-input" name="artist" type="text" onChange = {handleChange}/> 
+                    </div>
+                    <div className="form-body">
+                        <label className="form-label">Artist</label>
+                        <input className="form-input" name="artist" type="text" onChange = {handleChange}/> 
                     {
                         error.artist ? <p className="error-msg">{error.artist.message}</p> : null
                     }
-                </div>
+                    </div>
                 <div className="form-body">
                     <label className="form-label">Height</label>
                     <input className="form-input" name="height" type="number" onChange = {handleChange}/> 
@@ -96,6 +101,7 @@ const Create = () => {
                 <br/>
                 <input type="submit" value="Submit"/>
             </form>
+        </div>
     </div>
     )
 }

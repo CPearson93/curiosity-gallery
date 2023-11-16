@@ -30,35 +30,42 @@ const Home = () => {
     }
 
 return(
-    <div>
+    <div className="wrapper">
         <div className="nav-wall">
             <div className="nav-content">
-                <h1>Curiosity Gallery</h1>
-                <h2>Share a piece of art, Enjoy a piece of art</h2>
+                <h1 className="head-color">Curiosity Gallery</h1>
+                <div className="nav-button">
                 <button onClick={() => handleCreate()}>
                     Add Art!
                 </button>
+                </div>
+            </div>
+            <div className="nav-desc">
+                <h2 className="head-color">Share a piece of art, Enjoy a piece of art</h2>
             </div>
         </div>
-            {
-                allArts.allArt?.map((arts) => (
-                    <div className="art-list" key={arts._id}>
-                        <div className="art-content">
-                            <h2>{arts.title}</h2>
-                            <p>{arts.artist}</p>
-                            <p>{arts.type}</p>
+        <div className="page-body">
+                {
+                    allArts.allArt?.map((arts) => (
+                        <div className="art-list" key={arts._id}>
+                            <div className="art-content">
+                                <h2>{arts.title}</h2>
+                                <h3>{arts.artist}</h3>
+                                <p>{arts.type}</p>
+                                <p>{arts.width}" x {arts.height}"</p>
+                            </div>
+                            <div className="art-buttons">
+                                <button onClick={() => handleEdit(arts._id)}>
+                                    Edit
+                                </button>
+                                <button onClick={() => handleDetail(arts._id)}>
+                                    Art Details
+                                </button>
+                            </div>
                         </div>
-                        <div className="art-edit">
-                            <button onClick={() => handleEdit(arts._id)}>
-                                Edit
-                            </button>
-                        </div>
-                        <button onClick={() => handleDetail(arts._id)}>
-                    Art Details
-                </button>
-                    </div>
-                ))
-            }
+                    ))
+                }
+            </div>
         </div>
     )
 }
