@@ -29,30 +29,43 @@ const Detail = () => {
         navigate("/")
     }
 
+    const handleEdit = (_id) => {
+        navigate(`/api/art/edit/${_id}`)
+    }
+
     const handleHome = () => {
         navigate('/')
     }
     
     return(
-    <div>
+    <div className="wrapper">
         <div className="nav-wall">
             <div className="nav-content">
-                <h1>Curiosity Gallery</h1>
-                <h2>Share a piece of art, Enjoy a piece of art</h2>
+                <h1 className="head-color">Curiosity Gallery</h1>
+                <div className="nav-button">
                 <button onClick={() => handleHome()}>
-                    Go back Home
+                    Home
                 </button>
+                </div>
+            </div>
+            <div className="nav-desc">
+                <h2 className="head-color">Share a piece of art, Enjoy a piece of art</h2>
             </div>
         </div>
+        <div className="page-body">
         <p>Create Page</p>
         <h2>{oneArt.title}</h2>
         <p>{oneArt.artist}</p>
         <p>{oneArt.height}" x {oneArt.width}"</p>
         <p>{oneArt.type}</p>
         <p>{oneArt.description}</p>
+        <button onClick={() => handleEdit(oneArt._id)}>
+            Edit
+        </button>
         <button onClick={() => handleDelete(oneArt._id)}>
             Delete
         </button>
+        </div>
     </div>
     )
 }

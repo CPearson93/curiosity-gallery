@@ -60,17 +60,22 @@ const Update = () => {
 
     
     return(
-        <div>
+    <div className="wrapper">
         <div className="nav-wall">
             <div className="nav-content">
-                <h1>Curiosity Gallery</h1>
-                <h2>Share a piece of art, Enjoy a piece of art</h2>
+                <h1 className="head-color">Curiosity Gallery</h1>
+                <div className="nav-button">
                 <button onClick={() => handleHome()}>
-                    Go back Home
+                    Home
                 </button>
+                </div>
+            </div>
+            <div className="nav-desc">
+                <h2 className="head-color">Share a piece of art, Enjoy a piece of art</h2>
             </div>
         </div>
-        <p>Create Page</p>
+        <div className="page-body">
+            <h2>Create Page</h2>
                     <form className="form-background" onSubmit={handleSubmit}>
                 <div className="form-title">
                     <label className="form-label">Art Title</label>
@@ -120,6 +125,7 @@ const Update = () => {
                     Delete
                 </button>
             </form>
+        </div>
     </div>
     )
 }
