@@ -58,7 +58,6 @@ const Update = () => {
         navigate('/')
     }
 
-    
     return(
     <div className="wrapper">
         <div className="nav-wall">
@@ -75,55 +74,66 @@ const Update = () => {
             </div>
         </div>
         <div className="page-body">
-            <h2>Create Page</h2>
+            <h2 className="page-title">Update Page</h2>
                     <form className="form-background" onSubmit={handleSubmit}>
-                <div className="form-title">
-                    <label className="form-label">Art Title</label>
+                <div className="form-body">
+                    <label className="form-label"><h4>Art Title</h4></label>
                     <input className="form-input" name="title" type="text" value={art.title} onChange = {handleChange}/> 
+                </div>
                     {
                         error.title ? <p className="error-msg">{error.title.message}</p> : null
                     }
-                </div>
                 <div className="form-body">
-                    <label className="form-label">Artist</label>
+                    <label className="form-label"><h4>Artist</h4></label>
                     <input className="form-input" name="artist" type="text" value={art.artist} onChange = {handleChange}/> 
+                </div>
                     {
                         error.artist ? <p className="error-msg">{error.artist.message}</p> : null
                     }
-                </div>
                 <div className="form-body">
-                    <label className="form-label">Height</label>
+                    <label className="form-label"><h4>Height</h4></label>
                     <input className="form-input" name="height" type="number" value={art.height} onChange = {handleChange}/> 
+                </div>
                     {
                         error.height ? <p className="error-msg">{error.height.message}</p> : null
                     }
-                </div>
                 <div className="form-body">
-                    <label className="form-label">Width</label>
+                    <label className="form-label"><h4>Width</h4></label>
                     <input className="form-input" name="width" type="number" value={art.width} onChange = {handleChange}/> 
+                </div>
                     {
                         error.width ? <p className="error-msg">{error.width.message}</p> : null
                     }
-                </div>
                 <div className="form-body">
-                    <label className="form-label">Description</label>
+                    <label className="form-label"><h4>Description</h4></label>
                     <textarea className="form-textarea" cols="20" rows="3" name="description" type="text" value={art.description} onChange = {handleChange}/> 
+                </div>
                     {
                         error.description ? <p className="error-msg">{error.description.message}</p> : null
                     }
-                </div>
                 <div className="form-body">
-                    <label className="form-label">Type</label>
-                    <input className="form-input" name="type" type="text" value={art.type} onChange = {handleChange}/> 
+                <label className="form-label"><h4>Type</h4></label>
+                {art.type !== '' &&
+                    <select className="form-input" name="type" defaultValue={art.type} onChange = {handleChange}>
+                        <option value="Digital">Digital</option>
+                        <option value="Hand Drawn">Hand Drawn</option>
+                        <option value="Painting">Painting</option>
+                        <option value="Sculpture">Sculpture</option>
+                        <option value="Figurine">Figurine</option>
+                        <option value="Photograph">Photograph</option>
+                    </select>
+                }
+                </div>
                     {
                         error.type ? <p className="error-msg">{error.type.message}</p> : null
                     }
-                </div>
                 <br/>
-                <input type="submit" value="Submit"/>
-                <button onClick={() => handleDelete(art._id)}>
-                    Delete
-                </button>
+                <div className="form-buttons">
+                    <button onClick={() => handleDelete(art._id)}>
+                        Delete
+                    </button>
+                    <input type="submit" value="Submit"/>
+                </div>
             </form>
         </div>
     </div>

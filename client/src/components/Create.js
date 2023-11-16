@@ -57,49 +57,58 @@ const Create = () => {
             <h2 className="page-title">Create Page</h2>
                 <form className="form-background" onSubmit={handleSubmit}>
                     <div className="form-body">
-                        <label className="form-label">Art Title</label>
+                        <label className="form-label"><h4>Art Title</h4></label>
                         <input className="form-input" name="title" type="text" onChange = {handleChange}/> 
+                    </div>
                     {
                         error.title ? <p className="error-msg">{error.title.message}</p> : null
                     }
-                    </div>
                     <div className="form-body">
-                        <label className="form-label">Artist</label>
+                        <label className="form-label"><h4>Artist</h4></label>
                         <input className="form-input" name="artist" type="text" onChange = {handleChange}/> 
+                    </div>
                     {
                         error.artist ? <p className="error-msg">{error.artist.message}</p> : null
                     }
-                    </div>
                 <div className="form-body">
-                    <label className="form-label">Height</label>
+                    <label className="form-label"><h4>Height</h4></label>
                     <input className="form-input" name="height" type="number" onChange = {handleChange}/> 
+                </div>
                     {
                         error.height ? <p className="error-msg">{error.height.message}</p> : null
                     }
-                </div>
                 <div className="form-body">
-                    <label className="form-label">Width</label>
+                    <label className="form-label"><h4>Width</h4></label>
                     <input className="form-input" name="width" type="number" onChange = {handleChange}/> 
+                </div>
                     {
                         error.width ? <p className="error-msg">{error.width.message}</p> : null
                     }
-                </div>
                 <div className="form-body">
-                    <label className="form-label">Description</label>
+                    <label className="form-label"><h4>Description</h4></label>
                     <textarea className="form-textarea" cols="20" rows="3" name="description" type="text" onChange = {handleChange}/> 
+                </div>
                     {
                         error.description ? <p className="error-msg">{error.description.message}</p> : null
                     }
-                </div>
                 <div className="form-body">
-                    <label className="form-label">Type</label>
-                    <input className="form-input" name="type" type="text" onChange = {handleChange}/> 
+                    <label className="form-label"><h4>Type</h4></label>
+                    <select className="form-input" name="type" onChange = {handleChange}>
+                        <option value="Digital">Digital</option>
+                        <option value="Hand Drawn">Hand Drawn</option>
+                        <option value="Painting">Painting</option>
+                        <option value="Sculpture">Sculpture</option>
+                        <option value="Figurine">Figurine</option>
+                        <option value="Photograph">Photograph</option>
+                    </select>
+                </div>
                     {
                         error.type ? <p className="error-msg">{error.type.message}</p> : null
                     }
-                </div>
                 <br/>
+                <div className="sub-button">
                 <input type="submit" value="Submit"/>
+                </div>
             </form>
         </div>
     </div>
