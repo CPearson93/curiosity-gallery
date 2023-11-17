@@ -42,8 +42,14 @@ button{
 }
 
 .nav-desc{
+  border-bottom: 2px solid gray;
+
   display: flex;
   justify-content: center;
+}
+
+.query{
+  color: white;
 }
 
 .page-body{
@@ -114,4 +120,8 @@ button{
 
 .error-msg{
   color: red;
+}
+
+.image-with-spacing {
+  margin-right: 10px; /* Adjust the margin as needed */
 }

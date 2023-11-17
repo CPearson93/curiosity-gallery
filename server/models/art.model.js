@@ -34,7 +34,10 @@ const ArtSchema = new mongoose.Schema({
     type: {
         type: String,
         required: [true, 'please select an option']
-    }
+    },
+    imageUrls: [{
+        type: String, // Assuming you are storing the image paths as strings
+    }],
 
 }, { timestamps: true });
 module.exports = mongoose.model("Art", ArtSchema);

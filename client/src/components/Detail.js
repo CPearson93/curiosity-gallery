@@ -59,6 +59,15 @@ const Detail = () => {
                 <p>{oneArt.height}" x {oneArt.width}"</p>
                 <p>{oneArt.type}</p>
                 <p>{oneArt.description}</p>
+                {oneArt.imageUrls?.map((imageUrl, index) => (
+    <img
+        key={index}
+        src={`http://localhost:8000/${imageUrl}`}
+        alt={`Art Image ${index}`}
+        height={100}
+        className="image-with-spacing"
+    />
+))}
                 <div className="form-buttons">
                     <button onClick={() => handleEdit(oneArt._id)}>
                         Edit
