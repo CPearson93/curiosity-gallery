@@ -5,4 +5,6 @@ module.exports = (app) => {
     app.get("/api/art/:id", ArtController.getOnePiece);
     app.patch("/api/art/:id", ArtController.editArt);
     app.delete("/api/art/:id", ArtController.destroyArt);
+    app.get('/api/search', ArtController.searchArt);
+
 }

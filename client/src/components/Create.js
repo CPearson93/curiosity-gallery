@@ -19,19 +19,46 @@ const Create = () => {
         setArt({...art, [e.target.name]: e.target.value})
     }
 
+ 
+    const handleFileChange = (e) => {
+        setArt({
+            ...art,
+            [e.target.name]: e.target.files,
+        });
+        console.log(art); // Log the art object to verify that images are present
+    };
+
     const handleSubmit = (e) => {
+        
+        
         e.preventDefault();
-        console.log(art);
-        axios.post("http://localhost:8000/api/art", art)
-        .then(res => {
-            console.log(res)
-            navigate("/")
-        })
-        .catch(err => {
-            console.log(err.response.data.errors)
-            setError(err.response.data.errors)
-        })
-    }
+        const formData = new FormData();
+        formData.append('title', art.title);
+        formData.append('artist', art.artist);
+        formData.append('height', art.height);
+        formData.append('width', art.width);
+        formData.append('description', art.description);
+        formData.append('type', art.type);
+    
+      
+        // Append each file separately
+        for (let i = 0; i < art.images?.length; i++) {
+            formData.append('images', art.images[i]);
+        }
+
+        console.log(formData.get('title'))
+         
+    
+        axios.post("http://localhost:8000/api/art", formData)
+            .then(res => {
+                console.log(res);
+                navigate("/");
+            })
+            .catch(err => {
+                console.log(err);
+                setError(err.response.data.errors);
+            });
+    };
 
     const handleHome = () => {
         navigate('/')
@@ -106,6 +133,13 @@ const Create = () => {
                         error.type ? <p className="error-msg">{error.type.message}</p> : null
                     }
                 <br/>
+                <div className="form-body">
+        <label className="form-label">Images</label>
+        <input type="file" name="images" onChange={handleFileChange} multiple />
+        {
+            error.images ? <p className="error-msg">{error.images.message}</p> : null
+        }
+    </div>
                 <div className="sub-button">
                 <input type="submit" value="Submit"/>
                 </div>

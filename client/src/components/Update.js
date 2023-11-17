@@ -128,6 +128,17 @@ const Update = () => {
                         error.type ? <p className="error-msg">{error.type.message}</p> : null
                     }
                 <br/>
+                <label className="form-label">Images</label>
+
+                {art.imageUrls?.map((imageUrl, index) => (
+    <img
+        key={index}
+        src={`http://localhost:8000/${imageUrl}`}
+        alt={`Art Image ${index}`}
+        height={100}
+        className="image-with-spacing"
+    />
+))}
                 <div className="form-buttons">
                     <button onClick={() => handleDelete(art._id)}>
                         Delete
